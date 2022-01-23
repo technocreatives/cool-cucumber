@@ -151,6 +151,7 @@ SupportCodeLibraryBuilder
 ## Next up
 
 - [x] Async tests
+- [x] Skip tag
 - [ ] Caching
 - [ ] Error messages that don't suck
 - [ ] Test the rest of the features

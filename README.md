@@ -33,11 +33,12 @@ Here is a probably outdated list of things it generates:
 - If a `Background` is present, it is include in all the affected scenarios
 - Data Tables are supported
 - Expressions are supported
+- `@skip` tag will (you guessed it) skip the feature/scenario
 
 Not implement/tested:
 
 - Before/After hooks are not supported yet
-- Tags are included as (invisible) comments only for now
+- Custom tags are included as (invisible) comments only for now
 - Doc Strings have not been tested
 - `Rule`s have not been tested
 
