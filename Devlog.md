@@ -127,5 +127,22 @@ Challenge: How to invoke cucumber steps?
 - We have empty test functions in the right order, great.
 - What is needed to run cucumber?
   - Init world
-    - On each example, I assume
+    - On each example, I assume?
   - Call steps
+- First off: tell jest to load steps from a file
+
+SupportCodeLibraryBuilder
+- So there is a thing in `@cucumber/cucumber/lib/support_code_library_builder` that cucumber-jest uses
+  - It seems to be able to collect all the global definitions of the cucumber steps etc
+  - The default export is an instance of the class
+- Got some issues using it in my codegen in a call to `getDefinitionLineAndUri`
+  - `cwd` is undefined
+  - This is from the steps definition!
+  - `SupportCodeLibraryBuilder` only sets `cwd` in its reset function -- oops! We need to call that I guess.
+    - gonna aggressively call it in steps setup for now
+    - FIXME: proper setup code
+- getting arguments from steps
+  - Pattern: apply step text to the step's expression and get params
+  - Assumption: Data table is last argument
+  - There's also doc strings but I don't yet what it does
+- I can run tests!

@@ -15,7 +15,6 @@ const transformer: SyncTransformer<Options> = {
     })
 
     const res = featureToJestTest(messages);
-    console.log(res);
     return res;
   },
 };
