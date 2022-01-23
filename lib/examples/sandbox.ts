@@ -21,5 +21,5 @@ stream.on('end', () => {
 })
 
 stream.on('data', (item: Envelope) => {
-  console.log(item);
+  console.log(JSON.stringify(item, null, 2));
 })

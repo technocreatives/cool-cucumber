@@ -79,4 +79,8 @@ Let's add the gherkin-stream thing to our lib and see what it gives us
   - Do I ned to care about anything but pickles?
   - How to map this to jest's `test` and `describe`?
 - Gonna have to make the example more complex to see what the pickles will become
-  - Test: Background, Scenario outline, data blocks
+  - Test: Background, Scenario outline, data tables, tags
+  - Results
+    - Background and scenario outlines are resolved in pickles, I don't have to think about them
+    - Data tables are inlined in pretty much their AST, I'll have to turn it into a nice hashmap myself I guess
+    - Tags are just arrays of strings
