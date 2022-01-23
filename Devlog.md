@@ -84,3 +84,9 @@ Let's add the gherkin-stream thing to our lib and see what it gives us
     - Background and scenario outlines are resolved in pickles, I don't have to think about them
     - Data tables are inlined in pretty much their AST, I'll have to turn it into a nice hashmap myself I guess
     - Tags are just arrays of strings
+
+Let's look at integrating this with jest from nextjs
+- We follow [the docs](https://nextjs.org/docs/testing#setting-up-jest-with-the-rust-compiler)
+  - installing dependencies and creating the config file
+  - create example file (but as `.tsx`), and also add `@types/jest` dependency
+  - Oh wait, we didn't set up next with typescript. How is that not the default? Jesus. Let's redo that part.
