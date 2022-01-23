@@ -110,3 +110,22 @@ Sync vs Async transforms
   1. jest calling our transform
   2. A gherkin file being parsed
   3. A working empty string output!
+
+Codegen time!
+- Iterate thru all pickle messages and build jest-like code for them
+  - This is just busy work
+  - Assume that our lib is called per feature file
+  - Data table transform in ~10 lines of code, very nice
+- Error handling:
+  - Are Jest errors documented somewhere? By default it points to the beginning of the feature file
+  - Minimum cases
+    1. feature file parse error: when first message has an `attachment` and no `gherkinDocument`
+    2. Missing steps: ???
+      - Would be amazing to generate boilerplate
+
+Challenge: How to invoke cucumber steps?
+- We have empty test functions in the right order, great.
+- What is needed to run cucumber?
+  - Init world
+    - On each example, I assume
+  - Call steps
