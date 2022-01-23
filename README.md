@@ -10,7 +10,7 @@ Run [Cucumber] tests from feature files with [Jest].
 You want to write wonderful feature files (in [Gherkin]),
 but instead of using Cucumber's runner
 you want to get all the nice feature from Jest
-that you get for free with [create-react-app] or even create-next-app.
+that you get for free with [create-react-app] or even [create-next-app].
 
 [Gherkin]: https://cucumber.io/docs/gherkin/reference/
 [create-react-app]: https://create-react-app.dev/
