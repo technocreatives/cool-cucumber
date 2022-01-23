@@ -146,3 +146,9 @@ SupportCodeLibraryBuilder
   - Assumption: Data table is last argument
   - There's also doc strings but I don't yet what it does
 - I can run tests!
+- Note to self: `JSON.stringify` is great for injecting JS strings into JS source!
+
+Next up:
+1. Caching
+2. Error messages that don't suck
+3. Test the rest of the features
