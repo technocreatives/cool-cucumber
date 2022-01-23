@@ -90,3 +90,23 @@ Let's look at integrating this with jest from nextjs
   - installing dependencies and creating the config file
   - create example file (but as `.tsx`), and also add `@types/jest` dependency
   - Oh wait, we didn't set up next with typescript. How is that not the default? Jesus. Let's redo that part.
+- Make our lib export a thing that works as a [Jest transform](https://jestjs.io/docs/code-transformation#examples)
+  - Going for code that doesn't require typescript for now as a precaution
+  - Configuring jest to look at feature files and call cool-cucumber
+  - Adding dummy feature that looks very much like the other jest test we just pasted it
+  - 20min later: Also add `feature` to `moduleFileExtensions`
+- Made the whole lib a typescript project that can be built and installed
+  - lib has a build step (just `tsc` really)
+  - test app now has `"cool-cucumber": "file:../lib"` dependency
+
+Sync vs Async transforms
+- So I get a stream of messages from gherkin-stream, which I can use in an async context
+- Jest docs say there's `SyncTransformer` and `AsyncTransformer` and I can implement either
+- And yet it complains when I implement `AsyncTransformer`
+  - digging thru jest issues I find [#11458](https://github.com/facebook/jest/issues/11458) but don't see any good solution
+- cucumber-jest code that parses the feature file at runtime it seems
+- Okay, we don't use `gherkin-stream`: the `gherkin` package does the same and is synchronous! Crisis averted.
+- So now we have
+  1. jest calling our transform
+  2. A gherkin file being parsed
+  3. A working empty string output!
