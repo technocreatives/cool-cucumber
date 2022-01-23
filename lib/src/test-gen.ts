@@ -59,7 +59,7 @@ function callSteps(step: PickleStep, ast: GherkinDocument): string {
   })
 
   return `
-    expect(() => {
+    await (async () => {
       const stepText = ${JSON.stringify(step.text)};
       const step = cucumberEnv.stepDefinitions.find((def) => {
         return def.matchesStepName(stepText);
@@ -76,8 +76,8 @@ function callSteps(step: PickleStep, ast: GherkinDocument): string {
         ...(expression || []).map(x => x.getValue()),
         ...(data.length ? [data] : [])
       ];
-      step.code.apply(cucumberEnv.world, args);
-    }).not.toThrow();
+      await step.code.apply(cucumberEnv.world, args);
+    })();
   `;
 }
 

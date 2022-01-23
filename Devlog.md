@@ -148,8 +148,9 @@ SupportCodeLibraryBuilder
 - I can run tests!
 - Note to self: `JSON.stringify` is great for injecting JS strings into JS source!
 
-Next up:
-0. Async tests
-1. Caching
-2. Error messages that don't suck
-3. Test the rest of the features
+## Next up
+
+- [x] Async tests
+- [ ] Caching
+- [ ] Error messages that don't suck
+- [ ] Test the rest of the features

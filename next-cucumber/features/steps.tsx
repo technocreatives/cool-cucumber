@@ -6,7 +6,7 @@ import { default as supportCodeLibraryBuilder } from "@cucumber/cucumber/lib/sup
 import { uuid } from "@cucumber/messages/dist/src/IdGenerator";
 supportCodeLibraryBuilder.reset(process.cwd(), uuid());
 
-Given("I am on the home page", function () {
+Given("I am on the home page", async function () {
   render(<Home />);
 });
 
@@ -14,10 +14,15 @@ When("I look at it real close", function () {
   console.log("Looooking");
 });
 
-Then("it says {string}", function (res: string) {
-  const heading = screen.getByRole("heading", {
-    name: new RegExp(res, "i"),
-  });
+Then("it says {string}", async function (res: string) {
+  expect.assertions(1);
+  await new Promise((resolve, reject) => {
+    const heading = screen.getByRole("heading", {
+      name: new RegExp(res, "i"),
+    });
+    console.log("there it is");
 
-  expect(heading).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    resolve(true);
+  });
 });
