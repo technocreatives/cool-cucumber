@@ -4,5 +4,16 @@
   "description": "Jest + Cucumber = <3",
   "main": "index.ts",
   "author": "Pascal Hertleif <pascal@technocreatives.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "try": "ts-node examples/sandbox.ts"
+  },
+  "dependencies": {
+    "@cucumber/gherkin-streams": "^4.0.0",
+    "@cucumber/messages": "^17.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
 }

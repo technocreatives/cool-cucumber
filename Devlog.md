@@ -62,3 +62,21 @@ How to get going?
 
 ## Coding time
 
+Let's add the gherkin-stream thing to our lib and see what it gives us
+- Write example feature file
+- Node streams, how do they work?
+  - add the usual `.on` handlers and see what falls out of it
+- `GherkinStreams.fromPaths` can't deal with directories, you have to give it file paths.
+- the callback in `.on('data', callback)` is given `any`, thanks
+  - It's an `Envelope` from `@cucumber/messages`, guess I'm gonna add that dependency for types at least
+  - That `Envelope` type is not an enum, just a thing with optional fields, terrific.
+    Gonna name them by the field they have from now on.
+- Alright, my `example.feature` gives me three messages
+  1. `source`, containing the plain text of my file
+  2. `gherkinDocument`, the AST representation of my file
+  3. `pickle`, which I assume are the individual and resolved examples
+- Challenges from this:
+  - Do I ned to care about anything but pickles?
+  - How to map this to jest's `test` and `describe`?
+- Gonna have to make the example more complex to see what the pickles will become
+  - Test: Background, Scenario outline, data blocks
