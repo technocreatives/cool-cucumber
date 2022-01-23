@@ -33,7 +33,7 @@ export default function featureToJestTest(
     const cucumberEnv = supportCodeLibraryBuilder.finalize();
     const allKnownSteps = cucumberEnv.stepDefinitions.map(x => \`'\${x.pattern}'\`).join(", ");
 
-    describe("${feature.name}", () => {
+    describe(${JSON.stringify(feature.name)}, () => {
       ${tests.join("\n")}
     })
   `;
@@ -44,7 +44,7 @@ function pickleToTest(pickle: Pickle, ast: GherkinDocument): string {
 
   return `
     // tags: ${pickle.tags.join(", ")}
-    test("${pickle.name}", async () => {
+    test(${JSON.stringify(pickle.name)}, async () => {
       ${steps.join("\n")}
     });
   `;
@@ -60,13 +60,13 @@ function callSteps(step: PickleStep, ast: GherkinDocument): string {
 
   return `
     expect(() => {
-      const stepText = "${step.text}";
+      const stepText = ${JSON.stringify(step.text)};
       const step = cucumberEnv.stepDefinitions.find((def) => {
         return def.matchesStepName(stepText);
       });
       if (!step) {
         const error = new Error(\`No definition found for step '\${stepText}', I only know these: \${allKnownSteps}\`);
-        error.stack = \`${source.join('\n')}\`;
+        error.stack = ${JSON.stringify(source.join('\n'))};
         throw error;
       }
 
