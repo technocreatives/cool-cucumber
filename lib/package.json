@@ -4,15 +4,17 @@
   "description": "Jest + Cucumber = <3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "readme": "README.md",
   "engines": {
     "node": ">=16"
   },
   "author": "Pascal Hertleif <pascal@technocreatives.com>",
-  "license": "MIT",
+  "license": "(MIT OR Apache-2.0)",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "try": "ts-node examples/sandbox.ts"
+    "try": "ts-node examples/sandbox.ts",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@cucumber/cucumber": "^8.0.0-rc.2",

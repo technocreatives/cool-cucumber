@@ -8,6 +8,8 @@
     "lint": "next lint",
     "test": "jest"
   },
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Pascal Hertleif <pascal@technocreatives.com>",
   "dependencies": {
     "@cucumber/cucumber": "^8.0.0-rc.2",
     "cool-cucumber": "file:../lib",
