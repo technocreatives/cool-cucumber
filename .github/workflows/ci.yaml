@@ -1,0 +1,23 @@
+name: CI
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "16"
+        cache: 'npm'
+        cache-dependency-path: |
+          lib/package-lock.json
+          next-cucumber/package-lock.json
+    - run: npm install
+      working-directory: lib
+    - run: npm run build
+      working-directory: lib
+    - run: npm install
+      working-directory: next-cucumber
+    - run: npm test
+      working-directory: next-cucumber
