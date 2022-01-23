@@ -10,6 +10,13 @@
   },
   "author": "Pascal Hertleif <pascal@technocreatives.com>",
   "license": "(MIT OR Apache-2.0)",
+  "keywords": [
+    "testing",
+    "cucumber",
+    "jest",
+    "readct",
+    "nextjs"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",

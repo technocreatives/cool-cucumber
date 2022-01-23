@@ -1,6 +1,6 @@
 # Cool Cucumber
 
-Run [Cucumber] feature files with [Jest].
+Run [Cucumber] tests from feature files with [Jest].
 
 [Cucumber]: https://cucumber.io/
 [Jest]: https://jestjs.io/
