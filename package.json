@@ -4,7 +4,10 @@
   "description": "Jest + Cucumber = <3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "readme": "README.md",
+  "repository": {
+    "url": "https://github.com/technocreatives/cool-cucumber",
+    "type": "git"
+  },
   "engines": {
     "node": ">=16"
   },
