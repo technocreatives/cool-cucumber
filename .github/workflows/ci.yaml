@@ -11,12 +11,10 @@ jobs:
         node-version: "16"
         cache: 'npm'
         cache-dependency-path: |
-          lib/package-lock.json
+          package-lock.json
           example-nextjs/package-lock.json
     - run: npm install
-      working-directory: lib
     - run: npm run build
-      working-directory: lib
     - run: npm install
       working-directory: example-nextjs
     - run: npm test
