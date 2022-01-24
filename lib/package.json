@@ -1,5 +1,5 @@
 {
-  "name": "cool-cucumber",
+  "name": "@thetc/cool-cucumber",
   "version": "0.1.0",
   "description": "Jest + Cucumber = <3",
   "main": "dist/index.js",
