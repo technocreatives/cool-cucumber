@@ -10,6 +10,10 @@
   },
   "license": "(MIT OR Apache-2.0)",
   "author": "Pascal Hertleif <pascal@technocreatives.com>",
+  "repository": {
+    "url": "https://github.com/technocreatives/cool-cucumber",
+    "type": "git"
+  },
   "dependencies": {
     "@cucumber/cucumber": "^8.0.0-rc.2",
     "cool-cucumber": "file:..",
