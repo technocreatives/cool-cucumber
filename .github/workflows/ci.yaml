@@ -12,12 +12,12 @@ jobs:
         cache: 'npm'
         cache-dependency-path: |
           lib/package-lock.json
-          next-cucumber/package-lock.json
+          example-nextjs/package-lock.json
     - run: npm install
       working-directory: lib
     - run: npm run build
       working-directory: lib
     - run: npm install
-      working-directory: next-cucumber
+      working-directory: example-nextjs
     - run: npm test
-      working-directory: next-cucumber
+      working-directory: example-nextjs

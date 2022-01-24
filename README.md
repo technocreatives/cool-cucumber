@@ -56,7 +56,7 @@ You'll need to extend your `jest.config.js`:
 - Add `"\\.feature$": 'cool-cucumber',` to `transform`
 - Add something like `"<rootDir>/features/*.feature",` to `testMatch`
 
-You can find an example based on Next.js' jest config in `next-cucumber/jest.config.js`.
+You can find an example based on Next.js' jest config in `example-nextjs/jest.config.js`.
 
 ### Step definition
 
