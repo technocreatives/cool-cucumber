@@ -2,6 +2,9 @@
 
 Run [Cucumber] tests from feature files with [Jest].
 
+[![NPM version](https://img.shields.io/npm/v/@thetc/cool-cucumber.svg?style=flat-square)](https://www.npmjs.com/package/@thetc/cool-cucumber)
+![License](https://img.shields.io/npm/l/@thetc/cool-cucumber?style=flat-square)
+
 [Cucumber]: https://cucumber.io/
 [Jest]: https://jestjs.io/
 
